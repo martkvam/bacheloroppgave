@@ -20,5 +20,5 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
+    - name: Build and test case service
       run: mvn -B package --file ./case-service/pom.xml
