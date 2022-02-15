@@ -10,6 +10,6 @@ public class CaseServiceApplication {
 		SpringApplication.run(CaseServiceApplication.class, args);
 	}
 
-	//Test
+	//Testing
 
 }
