@@ -4,23 +4,19 @@ import java.util.Date;
 
 public class Case {
     private int caseId;
-    private String type;
     private long amount;
-    private boolean finished;
+    private String status;
     private Date date;
-    private String name;
-    private String customerFirstName;
-    private String customerLastName;
+    private Product product;
+    private Customer customer;
 
-    public Case(int caseId, String type, long amount, boolean finished, Date date, String name, String customerFirstName, String customerLastName) {
+    public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {
         this.caseId = caseId;
-        this.type = type;
         this.amount = amount;
-        this.finished = finished;
+        this.status = status;
         this.date = date;
-        this.name = name;
-        this.customerFirstName = customerFirstName;
-        this.customerLastName = customerLastName;
+        this.product = product;
+        this.customer = customer;
     }
 
     public Case() {
@@ -34,14 +30,6 @@ public class Case {
         this.caseId = caseId;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public long getAmount() {
         return amount;
     }
@@ -50,12 +38,12 @@ public class Case {
         this.amount = amount;
     }
 
-    public boolean isFinished() {
-        return finished;
+    public String getStatus() {
+        return status;
     }
 
-    public void setFinished(boolean finished) {
-        this.finished = finished;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Date getDate() {
@@ -66,27 +54,19 @@ public class Case {
         this.date = date;
     }
 
-    public String getName() {
-        return name;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public String getCustomerFirstName() {
-        return customerFirstName;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerFirstName(String customerFirstName) {
-        this.customerFirstName = customerFirstName;
-    }
-
-    public String getCustomerLastName() {
-        return customerLastName;
-    }
-
-    public void setCustomerLastName(String customerLastName) {
-        this.customerLastName = customerLastName;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
