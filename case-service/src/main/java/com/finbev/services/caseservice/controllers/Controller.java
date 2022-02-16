@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 public class Controller {
 
-    @GetMapping("/test")
+    @GetMapping("/case")
     public List<Case> test(){
        Finbev finbev = new Finbev(1, "Finansieringsbevis", 200000, false, new Date(), "Test", "Martin", "Kvam");
        HouseLoan houseLoan = new HouseLoan(2, "Lån", 300000, true, new Date(), "Grønt boliglån", "Martin", "Kvam");
