@@ -1,6 +1,7 @@
 package com.finbev.services.caseservice.models;
 
 import java.util.Date;
+import java.util.List;
 
 public class Case {
     private int caseId;
@@ -8,15 +9,15 @@ public class Case {
     private String status;
     private Date date;
     private Product product;
-    private Customer customer;
+    private List<Participant> participants;
 
-    public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {
+    public Case(int caseId, long amount, String status, Date date, Product product, List<Participant> participants) {
         this.caseId = caseId;
         this.amount = amount;
         this.status = status;
         this.date = date;
         this.product = product;
-        this.customer = customer;
+        this.participants = participants;
     }
 
     public Case() {
@@ -62,11 +63,11 @@ public class Case {
         this.product = product;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public List<Participant> getParticipants() {
+        return participants;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setParticipants(List<Participant> participants) {
+        this.participants = participants;
     }
 }

@@ -1,13 +1,13 @@
 package com.finbev.services.caseservice.models;
 
 public class Product {
-    private int Id;
+    private int productId;
     private String type;
     private String name;
     private String description;
 
     public Product(int id, String type, String name, String description) {
-        Id = id;
+        productId = id;
         this.type = type;
         this.name = name;
         this.description = description;
@@ -16,12 +16,12 @@ public class Product {
     public Product() {
     }
 
-    public int getId() {
-        return Id;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setProductId(int id) {
+        productId = id;
     }
 
     public String getType() {

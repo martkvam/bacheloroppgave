@@ -1,14 +1,12 @@
 package com.finbev.services.caseservice.models;
 
 public class Customer {
-    private int Id;
-    private String role;
+    private int customerId;
     private String customerFirstName;
     private String customerLastName;
 
-    public Customer(int id, String role, String customerFirstName, String customerLastName) {
-        Id = id;
-        this.role = role;
+    public Customer(int id, String customerFirstName, String customerLastName) {
+        this.customerId = id;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
     }
@@ -16,21 +14,14 @@ public class Customer {
     public Customer() {
     }
 
-    public int getId() {
-        return Id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setId(int id) {
-        Id = id;
+    public void setCustomerId(int id) {
+        customerId = id;
     }
 
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
 
     public String getCustomerFirstName() {
         return customerFirstName;
