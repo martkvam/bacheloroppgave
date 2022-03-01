@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/case-service/src/main/resources/db/migration/V1__Baseline.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/case-service/src/main/resources/db/migration/V2__CASE_table.sql" dialect="PostgreSQL" />
+  </component>
+</project>

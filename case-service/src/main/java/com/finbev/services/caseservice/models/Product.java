@@ -1,6 +1,11 @@
 package com.finbev.services.caseservice.models;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class Product {
+    @Id
+    @GeneratedValue
     private int Id;
     private String type;
     private String name;

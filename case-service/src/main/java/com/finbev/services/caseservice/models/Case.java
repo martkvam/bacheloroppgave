@@ -1,13 +1,26 @@
 package com.finbev.services.caseservice.models;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "Case")
 public class Case {
+    @Id
+    @GeneratedValue
     private int caseId;
+    @Column(name = "Amount")
     private long amount;
+    @Column(name = "Status")
     private String status;
+    @Column(name = "Date")
     private Date date;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {

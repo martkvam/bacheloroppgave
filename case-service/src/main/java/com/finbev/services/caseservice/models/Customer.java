@@ -1,8 +1,14 @@
 package com.finbev.services.caseservice.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class Customer {
+    @Id
+    @GeneratedValue
     private int Id;
     private String role;
     private String customerFirstName;
