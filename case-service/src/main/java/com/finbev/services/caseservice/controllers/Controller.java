@@ -12,17 +12,18 @@ import java.util.List;
 @RestController
 public class Controller {
 
-    @GetMapping("/case")
-    public List<Case> getCases(){
+    @GetMapping("/cases/{id}")
+    public List<Case> getCases(@PathVariable int id){
        return opprettListe();
     }
 
     //For å teste API, skal erstattes med databasekall
     public List<Case> opprettListe(){
-        Customer kunde1 = new Customer(1, "Applicant", "Martin", "Kvam");
-        Customer kunde2 = new Customer(2, "Applicant", "Adrian", "Nilsen");
-        Customer kunde3 = new Customer(3, "Applicant", "Trym", "Stenberg");
+        Customer kunde1 = new Customer(1, "Applicant", "Martin", "Kvam", new Date());
+        Customer kunde2 = new Customer(2, "Applicant", "Adrian", "Nilsen", new Date());
+        Customer kunde3 = new Customer(3, "Applicant", "Trym", "Stenberg", new Date());
 
+        //Database
         Product produkt1 = new Finbev(1, "FinBev", "Finansieringsbevis", "Finansieringbevis for boligkjøp");
         Product produkt2 = new HouseLoan(1, "Boliglån", "Grønt boliglån", "Boliglån med gunstig rente");
 

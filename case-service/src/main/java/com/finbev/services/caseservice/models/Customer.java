@@ -1,16 +1,20 @@
 package com.finbev.services.caseservice.models;
 
+import java.util.Date;
+
 public class Customer {
     private int Id;
     private String role;
     private String customerFirstName;
     private String customerLastName;
+    private Date birthdate;
 
-    public Customer(int id, String role, String customerFirstName, String customerLastName) {
+    public Customer(int id, String role, String customerFirstName, String customerLastName, Date birthdate) {
         Id = id;
         this.role = role;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
+        this.birthdate = birthdate;
     }
 
     public Customer() {
@@ -46,5 +50,13 @@ public class Customer {
 
     public void setCustomerLastName(String customerLastName) {
         this.customerLastName = customerLastName;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 }
