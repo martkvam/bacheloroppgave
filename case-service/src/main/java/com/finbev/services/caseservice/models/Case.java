@@ -2,12 +2,24 @@ package com.finbev.services.caseservice.models;
 
 import lombok.Data;
 
-import javax.persistence.*;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+
+
+
+
 import java.util.Date;
 
 @Entity
-@Data
-@Table(name = "cases")
+@Table(name = "case_table")
 public class Case {
 
     @Id
@@ -16,17 +28,22 @@ public class Case {
             allocationSize=1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator="cases_case_id_seq")
-    @Column(name = "case_id")
+    @Column
     private int caseId;
-
-    @Column(name = "amount")
+    @Column
     private long amount;
+    @Column
     private String status;
+    @Column
     private Date date;
-    private int product;
-    private int customer;
+    @ManyToOne
+    @JoinColumn
+    private Product product;
+    @ManyToOne
+    @JoinColumn
+    private Customer customer;
 
-    public Case(int caseId, long amount, String status, Date date, int product, int customer) {
+    public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {
         this.caseId = caseId;
         this.amount = amount;
         this.status = status;
@@ -70,19 +87,19 @@ public class Case {
         this.date = date;
     }
 
-    public int getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(int product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
 
-    public int getCustomer() {
+    public Customer getCustomer() {
         return customer;
     }
 
-    public void setCustomer(int customer) {
+    public void setCustomer(Customer customer) {
         this.customer = customer;
     }
 }

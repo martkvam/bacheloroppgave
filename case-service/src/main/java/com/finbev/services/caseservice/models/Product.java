@@ -1,9 +1,22 @@
 package com.finbev.services.caseservice.models;
 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Product {
+    @Id
     private int Id;
+    @Column
     private String type;
+    @Column
     private String name;
+    @Column
     private String description;
 
     public Product(int id, String type, String name, String description) {
