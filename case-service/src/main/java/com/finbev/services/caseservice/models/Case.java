@@ -1,13 +1,46 @@
 package com.finbev.services.caseservice.models;
 
+import lombok.Data;
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+
+
+
+
 import java.util.Date;
 
+@Entity
+@Table(name = "case_table")
 public class Case {
+
+    @Id
+    @SequenceGenerator(name="cases_case_id_seq",
+            sequenceName="cases_case_id_seq",
+            allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,
+            generator="cases_case_id_seq")
+    @Column
     private int caseId;
+    @Column
     private long amount;
+    @Column
     private String status;
+    @Column
     private Date date;
+    @ManyToOne
+    @JoinColumn
     private Product product;
+    @ManyToOne
+    @JoinColumn
     private Customer customer;
 
     public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {

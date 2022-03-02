@@ -1,9 +1,20 @@
 package com.finbev.services.caseservice.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Customer {
+    @Id
     private int Id;
+    @Column
     private String role;
+    @Column
     private String customerFirstName;
+    @Column
     private String customerLastName;
 
     public Customer(int id, String role, String customerFirstName, String customerLastName) {
