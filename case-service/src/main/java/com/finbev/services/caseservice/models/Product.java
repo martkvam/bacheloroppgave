@@ -1,13 +1,26 @@
 package com.finbev.services.caseservice.models;
 
+
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class Product {
-    private int productId;
+    @Id
+    private int Id;
+    @Column
     private String type;
+    @Column
     private String name;
+    @Column
     private String description;
 
     public Product(int id, String type, String name, String description) {
-        productId = id;
+        Id = id;
         this.type = type;
         this.name = name;
         this.description = description;
@@ -16,12 +29,12 @@ public class Product {
     public Product() {
     }
 
-    public int getProductId() {
-        return productId;
+    public int getId() {
+        return Id;
     }
 
-    public void setProductId(int id) {
-        productId = id;
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getType() {
