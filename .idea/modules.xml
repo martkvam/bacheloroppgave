@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/case-service/case-service.iml" filepath="$PROJECT_DIR$/case-service/case-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/naming-server/naming-server.iml" filepath="$PROJECT_DIR$/naming-server/naming-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/naming-server/.mvn/wrapper/wrapper.iml" filepath="$PROJECT_DIR$/naming-server/.mvn/wrapper/wrapper.iml" />
     </modules>
   </component>
 </project>
