@@ -18,13 +18,13 @@ public class Controller {
     CaseService caseService;
 
     @GetMapping("/cases")
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200") DENNE MÅ LEGGES TIL HVIS IKKE GATEWAY KJØRES
     public List<Case> getCases(){
         return caseService.findAllCases();
     }
 
     @GetMapping("cases/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    //@CrossOrigin(origins = "http://localhost:4200")
     public Case getCaseById(@PathVariable int id) throws Exception {
         List<Case> list = caseService.findAllCases();
         for (Case aCase : list){
