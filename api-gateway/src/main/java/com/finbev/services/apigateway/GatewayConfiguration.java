@@ -13,6 +13,8 @@ public class GatewayConfiguration {
         return builder.routes()
                 .route(p -> p.path("/case**")
                         .uri("http://localhost:8081/"))
+                .route(p -> p.path("/brokers**")
+                        .uri("http://localhost:8100/"))
                 //Test route
                 .route(p -> p.path("/get")
                         .filters(f -> f.addRequestHeader("MyHeader", "Dette er en test"))
