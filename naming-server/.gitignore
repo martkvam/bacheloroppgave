@@ -19,8 +19,6 @@ target/
 *.iml
 *.ipr
 
-.idea/**/uiDesigner.xml
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
