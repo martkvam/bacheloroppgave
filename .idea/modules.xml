@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Bacheloroppgave.iml" filepath="$PROJECT_DIR$/.idea/Bacheloroppgave.iml" />
+      <module fileurl="file://$PROJECT_DIR$/altinn-service/altinn-service.iml" filepath="$PROJECT_DIR$/altinn-service/altinn-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/brokerservice/brokerservice.iml" filepath="$PROJECT_DIR$/brokerservice/brokerservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/case-service/case-service.iml" filepath="$PROJECT_DIR$/case-service/case-service.iml" />

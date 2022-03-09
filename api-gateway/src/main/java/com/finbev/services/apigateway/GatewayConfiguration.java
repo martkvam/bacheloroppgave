@@ -11,10 +11,14 @@ public class GatewayConfiguration {
     @Bean
     public RouteLocator router(RouteLocatorBuilder builder){
         return builder.routes()
-                .route(p -> p.path("/case**")
-                        .uri("http://localhost:8100/"))
-                .route(p -> p.path("/brokers**")
-                        .uri("http://localhost:8200/"))
+                .route(p -> p.path("/cases/**")
+                        .uri("http://localhost:8100/cases/**"))
+                .route(p -> p.path("/brokers/**")
+                        .uri("http://localhost:8200/brokers/**"))
+                .route(p -> p.path("/contract/**")
+                        .uri("http://localhost:8300/contract/**"))
+                .route(p -> p.path("/contracts/**")
+                        .uri("http://localhost:8300/contracts/**"))
                 //Test route
                 .route(p -> p.path("/get")
                         .filters(f -> f.addRequestHeader("MyHeader", "Dette er en test"))
