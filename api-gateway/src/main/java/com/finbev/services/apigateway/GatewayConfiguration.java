@@ -12,7 +12,9 @@ public class GatewayConfiguration {
     public RouteLocator router(RouteLocatorBuilder builder){
         return builder.routes()
                 .route(p -> p.path("/case**")
-                        .uri("http://localhost:8081/"))
+                        .uri("http://localhost:8100/"))
+                .route(p -> p.path("/brokers**")
+                        .uri("http://localhost:8200/"))
                 //Test route
                 .route(p -> p.path("/get")
                         .filters(f -> f.addRequestHeader("MyHeader", "Dette er en test"))
