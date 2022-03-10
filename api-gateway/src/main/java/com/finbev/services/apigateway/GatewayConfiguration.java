@@ -12,9 +12,9 @@ public class GatewayConfiguration {
     public RouteLocator router(RouteLocatorBuilder builder){
         return builder.routes()
                 .route(p -> p.path("/cases/**")
-                        .uri("http://localhost:8081/cases/**"))
+                        .uri("http://localhost:8100/cases/**"))
                 .route(p -> p.path("/brokers/**")
-                        .uri("http://localhost:8100/brokers/**"))
+                        .uri("http://localhost:8200/brokers/**"))
                 .route(p -> p.path("/contract/**")
                         .uri("http://localhost:8300/contract/**"))
                 .route(p -> p.path("/contracts/**")
