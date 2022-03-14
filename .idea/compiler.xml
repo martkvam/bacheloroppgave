@@ -9,11 +9,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
         <module name="case-service" />
+        <module name="altinn-service" />
         <module name="brokerservice" />
         <module name="naming-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="altinn-service" target="17" />
       <module name="api-gateway" target="17" />
       <module name="brokerservice" target="17" />
       <module name="case-service" target="17" />
@@ -23,6 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="altinn-service" options="-parameters" />
       <module name="api-gateway" options="-parameters" />
       <module name="brokerservice" options="-parameters" />
       <module name="case-service" options="-parameters" />
