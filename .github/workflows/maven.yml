@@ -27,6 +27,6 @@ jobs:
     - name: Build and test altinn service
       run: mvn -B package --file ./altinn-service/pom.xml
     - name: Build and test broker service
-      run: mvn -B package --file ./broker-service/pom.xml
+      run: mvn -B package --file ./brokerservice/pom.xml
     - name: Build and test api gateway
       run: mvn -B package --file ./api-gateway/pom.xml
