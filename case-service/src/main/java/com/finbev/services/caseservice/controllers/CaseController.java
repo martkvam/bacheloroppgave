@@ -26,13 +26,7 @@ public class CaseController {
     @GetMapping("/cases/{id}")
     //@CrossOrigin(origins = "http://localhost:4200")
     public Case getCaseById(@PathVariable int id) throws Exception {
-        List<Case> list = caseService.findAllCases();
-        for (Case aCase : list){
-            if(aCase.getCaseId() == id){
-                return aCase;
-            }
-        }
-        throw new Exception("Could not find a case with id: " + id);
+        return caseService.getCaseById(id);
     }
 
     /*For å teste API, skal erstattes med databasekall
