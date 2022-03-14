@@ -22,5 +22,7 @@ jobs:
         cache: maven
     - name: Run docker compose
       run: docker-compose -f ./docker/docker-compose.yml up -d
+    - name: Run naming server
+      run: mvn install -DskipTests --file ./naming-server/pom.xml
     - name: Build and test case service
       run: mvn -B package --file ./case-service/pom.xml
