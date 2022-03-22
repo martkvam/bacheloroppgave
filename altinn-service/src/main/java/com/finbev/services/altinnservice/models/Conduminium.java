@@ -30,6 +30,7 @@ public class Conduminium extends RealEstate{
         this.leaseNumber = leaseNumber;
     }
 
+
     public int getPostalCode() {
         return postalCode;
     }
