@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Run shell script
-      run: bash ./dockersetup
+      run: bash ./dockersetup.sh
     - name: Build and test case service
       run: mvn -B package --file ./case-service/pom.xml
     - name: Build and test altinn service
