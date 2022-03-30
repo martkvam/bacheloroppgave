@@ -20,8 +20,8 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Run docker compose
-      run: docker-compose -f ./docker/docker-compose.yml up -d
+    - name: Run shell script
+      run: bash ./dockersetup
     - name: Build and test case service
       run: mvn -B package --file ./case-service/pom.xml
     - name: Build and test altinn service
