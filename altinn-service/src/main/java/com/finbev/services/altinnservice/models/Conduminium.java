@@ -21,14 +21,15 @@ public class Conduminium extends RealEstate{
     public Conduminium() {
     }
 
-    public Conduminium(int id, String address, String type, double purchaseAmount, int postalCode, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
-        super(id, address, type, purchaseAmount);
+    public Conduminium(int id, String address, String type, String energyClass, int postalCode, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
+        super(id, address, type, energyClass);
         this.postalCode = postalCode;
         this.cadastralNumber = cadastralNumber;
         this.titleNumber = titleNumber;
         this.sectionNumber = sectionNumber;
         this.leaseNumber = leaseNumber;
     }
+
 
     public int getPostalCode() {
         return postalCode;

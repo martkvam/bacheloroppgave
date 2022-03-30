@@ -10,6 +10,8 @@ public class PurchaseContract {
     @Column
     private int brokerId;
     @Column
+    private double purchaseAmount;
+    @Column
     private long socialSecurityNr;
     @Column
     private Date purchaseDate;
@@ -20,9 +22,10 @@ public class PurchaseContract {
     public PurchaseContract() {
     }
 
-    public PurchaseContract(int id, int brokerId, long socialSecurityNr, Date purchaseDate, RealEstate realEstate) {
+    public PurchaseContract(int id, int brokerId, double purchaseAmount, long socialSecurityNr, Date purchaseDate, RealEstate realEstate) {
         this.id = id;
         this.brokerId = brokerId;
+        this.purchaseAmount = purchaseAmount;
         this.socialSecurityNr = socialSecurityNr;
         this.purchaseDate = purchaseDate;
         this.realEstate = realEstate;
@@ -42,6 +45,14 @@ public class PurchaseContract {
 
     public void setBrokerId(int brokerId) {
         this.brokerId = brokerId;
+    }
+
+    public double getPurchaseAmount() {
+        return purchaseAmount;
+    }
+
+    public void setPurchaseAmount(double purchaseAmount) {
+        this.purchaseAmount = purchaseAmount;
     }
 
     public long getSocialSecurityNr() {

@@ -13,16 +13,16 @@ public class RealEstate {
     private int id;
     private String address;
     private String type;
-    private double purchaseAmount;
+    private String energyClass;
 
     public RealEstate() {
     }
 
-    public RealEstate(int id, String address, String type, double purchaseAmount) {
+    public RealEstate(int id, String address, String type, String energyClass) {
         this.id = id;
         this.address = address;
         this.type = type;
-        this.purchaseAmount = purchaseAmount;
+        this.energyClass = energyClass;
     }
 
     public int getId() {
@@ -49,11 +49,11 @@ public class RealEstate {
         this.type = type;
     }
 
-    public double getPurchaseAmount() {
-        return purchaseAmount;
+    public String getEnergyClass() {
+        return energyClass;
     }
 
-    public void setPurchaseAmount(double purchaseAmount) {
-        this.purchaseAmount = purchaseAmount;
+    public void setEnergyClass(String energyClass) {
+        this.energyClass = energyClass;
     }
 }
