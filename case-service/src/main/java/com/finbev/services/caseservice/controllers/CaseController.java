@@ -3,6 +3,8 @@ package com.finbev.services.caseservice.controllers;
 import com.finbev.services.caseservice.models.*;
 import com.finbev.services.caseservice.repos.CaseRepository;
 import com.finbev.services.caseservice.services.CaseService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,18 +14,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@Tag(name = "Case APIs", description = "Handles all queries related to cases")
 public class CaseController {
 
     @Autowired
     CaseService caseService;
 
     @GetMapping("/cases")
+    @Operation(description = "Returns all cases")
     //@CrossOrigin(origins = "http://localhost:4200") DENNE MÅ LEGGES TIL HVIS IKKE GATEWAY KJØRES
     public List<Case> getCases(){
         return caseService.findAllCases();
     }
 
     @GetMapping("/cases/{id}")
+    @Operation(description = "Retrieves a single case by for given ID")
     //@CrossOrigin(origins = "http://localhost:4200")
     public Case getCaseById(@PathVariable int id) throws Exception {
         return caseService.getCaseById(id);
