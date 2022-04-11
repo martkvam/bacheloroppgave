@@ -35,8 +35,8 @@ class CaseServiceUnitTest {
     void getCaseById_OK() throws Exception {
         Product product = new Product();
         Customer customer = new Customer();
-        Case case1 = new Case(1, 5000000, "Finished", new Date(), product, customer);
-        Case case2 = new Case(2, 30000000, "Waiting for approval", new Date(), product, customer);
+        Case case1 = new Case(1, 5_000_000, 3_000_000, 2_000_000, 500_000, "Finished", new Date(), product, customer);
+        Case case2 = new Case(2, 3_000_000, 2_000_000, 1_000_000, 500_000, "Waiting for approval", new Date(), product, customer);
         List<Case> caseList = new ArrayList<>();
         caseList.add(case1);
         caseList.add(case2);
@@ -50,8 +50,8 @@ class CaseServiceUnitTest {
     void getCaseById_NoSuchID() throws Exception{
         Product product = new Product();
         Customer customer = new Customer();
-        Case case1 = new Case(1, 5000000, "Finished", new Date(), product, customer);
-        Case case2 = new Case(2, 30000000, "Waiting for approval", new Date(), product, customer);
+        Case case1 = new Case(1, 5_000_000, 3_000_000, 2_000_000, 500_000, "Finished", new Date(), product, customer);
+        Case case2 = new Case(2, 3_000_000, 1_000_000, 2_000_000, 500_000, "Waiting for approval", new Date(), product, customer);
         List<Case> caseList = new ArrayList<>();
         caseList.add(case1);
         caseList.add(case2);
