@@ -13,6 +13,8 @@ public class GatewayConfiguration {
         return builder.routes()
                 .route(p -> p.path("/cases/**")
                         .uri("http://localhost:8100/cases/**"))
+                .route(p -> p.path("/updateApplication/**")
+                        .uri("http://localhost:8100/updateApplication/**"))
                 .route(p -> p.path("/brokers/**")
                         .uri("http://localhost:8200/brokers/**"))
                 .route(p -> p.path("/contract/**")

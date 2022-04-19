@@ -1,19 +1,11 @@
 package com.finbev.services.caseservice.models;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.engine.internal.Cascade;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
-
-
+import javax.persistence.*;
 
 
 import java.util.Date;
@@ -23,11 +15,8 @@ import java.util.Date;
 public class Case {
 
     @Id
-    @SequenceGenerator(name="cases_case_id_seq",
-            sequenceName="cases_case_id_seq",
-            allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-            generator="cases_case_id_seq")
+    @GeneratedValue(strategy = GenerationType.AUTO, generator="seq")
+    @GenericGenerator(name = "seq", strategy="increment")
     @Column
     private int caseId;
     @Column
@@ -36,10 +25,10 @@ public class Case {
     private String status;
     @Column
     private Date date;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Product product;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn
     private Customer customer;
 
