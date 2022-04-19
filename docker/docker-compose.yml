@@ -1,5 +1,57 @@
 version: '3'
 services:
+  naming-server:
+    image: springio/bachelor-naming-server:0.0.1-SNAPSHOT
+    ports:
+      - "8761:8761"
+    networks:
+      - my-network
+  case-service:
+    image: springio/bachelor-case-service:0.0.1-SNAPSHOT
+    ports:
+      - "8100:8100"
+    environment:
+       spring.datasource.url: "jdbc:postgresql://postgres:5432/case_service"
+       eureka.client.serviceUrl.defaultZone: http://naming-server:8761/eureka/
+    depends_on:
+      - postgres
+      - naming-server
+    networks:
+      - my-network
+  altinn-service:
+    image: springio/bachelor-altinn-service:0.0.1-SNAPSHOT
+    ports:
+      - "8300:8300"
+    environment:
+      spring.datasource.url: "jdbc:postgresql://postgres:5432/altinn_service"
+      eureka.client.serviceUrl.defaultZone: http://naming-server:8761/eureka/
+    depends_on:
+      - postgres
+      - naming-server
+    networks:
+      - my-network
+  broker-service:
+    image: springio/bachelor-brokerservice:0.0.1-SNAPSHOT
+    ports:
+      - "8200:8200"
+    environment:
+      spring.datasource.url: "jdbc:postgresql://postgres:5432/broker_service"
+      eureka.client.serviceUrl.defaultZone: http://naming-server:8761/eureka/
+    depends_on:
+      - postgres
+      - naming-server
+    networks:
+      - my-network
+  api-gateway:
+    image: springio/bachelor-api-gateway:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://naming-server:8761/eureka/
+    depends_on:
+      - naming-server
+    networks:
+      - my-network
   postgres:
     build:
       context: .
@@ -9,6 +61,8 @@ services:
     environment:
       POSTGRES_PASSWORD: dbpass
       POSTGRES_USER: dbuser
+    networks:
+      - my-network
   pgadmin:
     image: dpage/pgadmin4
     depends_on:
@@ -18,3 +72,8 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
       PGADMIN_DEFAULT_PASSWORD: admin
+    networks:
+      - my-network
+
+networks:
+  my-network:
