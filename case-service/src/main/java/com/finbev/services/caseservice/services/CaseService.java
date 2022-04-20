@@ -64,7 +64,11 @@ public class CaseService {
         Product application = productService.findApplication();
         newCase.setProduct(application);
         newCase.setStatus("Application in progress");
-        newCase.setAmount(aCase.getAmount());
+        newCase.setPurchaseAmount(aCase.getPurchaseAmount());
+        newCase.setLoanAmount(aCase.getLoanAmount());
+        newCase.setDebt(aCase.getDebt());
+        newCase.setEquity(aCase.getEquity());
+        newCase.setIncome(aCase.getIncome());
         newCase.setDate(aCase.getDate());
         newCase.setCustomer(aCase.getCustomer());
         return newCase;
