@@ -2,13 +2,12 @@ package com.finbev.services.caseservice.models;
 
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
+@DiscriminatorColumn(name="product_type",
+        discriminatorType = DiscriminatorType.INTEGER)
 public class Product {
     @Id
     private int Id;
