@@ -22,10 +22,10 @@ jobs:
         cache: maven
     - name: Run docker compose
       run: docker-compose -f ./docker/docker-compose.yml up -d
-    - name: Build and test case service
-      run: mvn -B package --file ./case-service/pom.xml
     - name: Build and test altinn service
       run: mvn -B package --file ./altinn-service/pom.xml
+    - name: Build and test case service
+      run: mvn -B package --file ./case-service/pom.xml
     - name: Build and test broker service
       run: mvn -B package --file ./brokerservice/pom.xml
     - name: Build and test api gateway
