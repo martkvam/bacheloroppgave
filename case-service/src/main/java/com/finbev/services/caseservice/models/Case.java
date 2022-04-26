@@ -4,9 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.engine.internal.Cascade;
 
-
 import javax.persistence.*;
-
 
 import java.util.Date;
 
@@ -20,7 +18,15 @@ public class Case {
     @Column
     private int caseId;
     @Column
-    private long amount;
+    private long purchaseAmount;
+    @Column
+    private long loanAmount;
+    @Column
+    private long equity;
+    @Column
+    private long income;
+    @Column
+    private long debt;
     @Column
     private String status;
     @Column
@@ -32,9 +38,13 @@ public class Case {
     @JoinColumn
     private Customer customer;
 
-    public Case(int caseId, long amount, String status, Date date, Product product, Customer customer) {
+    public Case(int caseId, long purchaseAmount, long loanAmount, long equity, long income, long debt, String status, Date date, Product product, Customer customer) {
         this.caseId = caseId;
-        this.amount = amount;
+        this.purchaseAmount = purchaseAmount;
+        this.loanAmount = loanAmount;
+        this.equity = equity;
+        this.income = income;
+        this.debt = debt;
         this.status = status;
         this.date = date;
         this.product = product;
@@ -52,12 +62,44 @@ public class Case {
         this.caseId = caseId;
     }
 
-    public long getAmount() {
-        return amount;
+    public long getPurchaseAmount() {
+        return purchaseAmount;
     }
 
-    public void setAmount(long amount) {
-        this.amount = amount;
+    public void setPurchaseAmount(long amount) {
+        this.purchaseAmount = amount;
+    }
+
+    public long getLoanAmount() {
+        return loanAmount;
+    }
+
+    public void setLoanAmount(long loanAmount) {
+        this.loanAmount = loanAmount;
+    }
+
+    public long getEquity() {
+        return equity;
+    }
+
+    public void setEquity(long equity) {
+        this.equity = equity;
+    }
+
+    public long getIncome() {
+        return income;
+    }
+
+    public void setIncome(long income) {
+        this.income = income;
+    }
+
+    public long getDebt() {
+        return debt;
+    }
+
+    public void setDebt(long debt) {
+        this.debt = debt;
     }
 
     public String getStatus() {
