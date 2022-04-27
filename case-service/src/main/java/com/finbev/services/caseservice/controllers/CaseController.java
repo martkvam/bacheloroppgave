@@ -24,12 +24,6 @@ public class CaseController {
         return caseService.findAllCases();
     }
 
-    @GetMapping("/cases/{id}")
-    @Operation(description = "Retrieves a single case by for given ID")
-    //@CrossOrigin(origins = "http://localhost:4200")
-    public Case getCaseById(@PathVariable int id) throws Exception {
-        return caseService.getCaseById(id);
-    }
 
     @PostMapping("/cases/updateApplication/{type}")
     @Operation(description = "finishes a house loan application")

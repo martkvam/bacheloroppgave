@@ -16,12 +16,15 @@ public class Customer {
     private String customerFirstName;
     @Column
     private String customerLastName;
+    @Column
+    private int age;
 
-    public Customer(int id, String role, String customerFirstName, String customerLastName) {
+    public Customer(int id, String role, String customerFirstName, String customerLastName, int age) {
         Id = id;
         this.role = role;
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
+        this.age = age;
     }
 
     public Customer() {
@@ -57,5 +60,13 @@ public class Customer {
 
     public void setCustomerLastName(String customerLastName) {
         this.customerLastName = customerLastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

@@ -25,7 +25,6 @@ public class Case {
     private long income;
     @Column
     private long debt;
-    @Column
     @Basic(optional = true)
     private int downpaymentPeriod;
     @Column
