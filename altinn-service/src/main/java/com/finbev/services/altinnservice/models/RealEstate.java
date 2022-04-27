@@ -1,9 +1,6 @@
 package com.finbev.services.altinnservice.models;
 
-import javax.persistence.DiscriminatorColumn;
-import javax.persistence.DiscriminatorType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @DiscriminatorColumn(name="product_type",
@@ -11,16 +8,22 @@ import javax.persistence.Id;
 public class RealEstate {
     @Id
     private int id;
+    @Column
     private String address;
+    @Column
+    private int postalCode;
+    @Column
     private String type;
+    @Column
     private String energyClass;
 
     public RealEstate() {
     }
 
-    public RealEstate(int id, String address, String type, String energyClass) {
+    public RealEstate(int id, String address, int postalCode, String type, String energyClass) {
         this.id = id;
         this.address = address;
+        this.postalCode = postalCode;
         this.type = type;
         this.energyClass = energyClass;
     }
@@ -39,6 +42,14 @@ public class RealEstate {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(int postalCode) {
+        this.postalCode = postalCode;
     }
 
     public String getType() {

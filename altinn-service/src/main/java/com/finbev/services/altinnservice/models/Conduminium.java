@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 @DiscriminatorValue("2")
 public class Conduminium extends RealEstate{
     @Basic(optional=true)
-    private int postalCode;
-    @Basic(optional=true)
     private int cadastralNumber;
     @Basic(optional=true)
     private int titleNumber;
@@ -21,22 +19,12 @@ public class Conduminium extends RealEstate{
     public Conduminium() {
     }
 
-    public Conduminium(int id, String address, String type, String energyClass, int postalCode, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
+    public Conduminium(int id, String address, String type, String energyClass, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
         super(id, address, type, energyClass);
-        this.postalCode = postalCode;
         this.cadastralNumber = cadastralNumber;
         this.titleNumber = titleNumber;
         this.sectionNumber = sectionNumber;
         this.leaseNumber = leaseNumber;
-    }
-
-
-    public int getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(int postalCode) {
-        this.postalCode = postalCode;
     }
 
     public int getCadastralNumber() {

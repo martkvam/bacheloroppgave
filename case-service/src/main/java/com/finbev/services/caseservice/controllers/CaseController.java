@@ -31,15 +31,17 @@ public class CaseController {
         return caseService.getCaseById(id);
     }
 
-    @PostMapping("/updateApplication/{type}")
+    @PostMapping("/cases/updateApplication/{type}")
+    @Operation(description = "finishes a house loan application")
     public String finishHouseLoan(@RequestBody Case aCase, @PathVariable String type){
         System.out.println(aCase);
         System.out.println(type);
         return caseService.createHouseLoan(aCase, type);
     }
 
-    @PostMapping("/cases/{id}")
-    public String createHouseLoanApplication(@PathVariable int id){
+    @GetMapping("/cases/{id}")
+    @Operation(description = "creates a new house loan application from an existing preapproval letter")
+    public Case createHouseLoanApplication(@PathVariable int id){
        return caseService.createHouseLoanApplication(id);
     }
 }

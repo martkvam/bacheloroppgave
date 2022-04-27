@@ -19,7 +19,7 @@ public class Product {
     private String description;
 
     public Product(int id, String type, String name, String description) {
-        Id = id;
+        this.Id = id;
         this.type = type;
         this.name = name;
         this.description = description;
@@ -33,7 +33,7 @@ public class Product {
     }
 
     public void setId(int id) {
-        Id = id;
+        this.Id = id;
     }
 
     public String getType() {

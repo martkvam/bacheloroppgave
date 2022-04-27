@@ -1,8 +1,6 @@
 package com.finbev.services.caseservice.models;
 
-import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.engine.internal.Cascade;
 
 import javax.persistence.*;
 
@@ -28,6 +26,9 @@ public class Case {
     @Column
     private long debt;
     @Column
+    @Basic(optional = true)
+    private int downpaymentPeriod;
+    @Column
     private String status;
     @Column
     private Date date;
@@ -38,13 +39,14 @@ public class Case {
     @JoinColumn
     private Customer customer;
 
-    public Case(int caseId, long purchaseAmount, long loanAmount, long equity, long income, long debt, String status, Date date, Product product, Customer customer) {
+    public Case(int caseId, long purchaseAmount, long loanAmount, long equity, long income, long debt, int downpaymentPeriod, String status, Date date, Product product, Customer customer) {
         this.caseId = caseId;
         this.purchaseAmount = purchaseAmount;
         this.loanAmount = loanAmount;
         this.equity = equity;
         this.income = income;
         this.debt = debt;
+        this.downpaymentPeriod = downpaymentPeriod;
         this.status = status;
         this.date = date;
         this.product = product;
@@ -100,6 +102,14 @@ public class Case {
 
     public void setDebt(long debt) {
         this.debt = debt;
+    }
+
+    public int getDownpaymentPeriod() {
+        return downpaymentPeriod;
+    }
+
+    public void setDownpaymentPeriod(int downpaymentPeriod) {
+        this.downpaymentPeriod = downpaymentPeriod;
     }
 
     public String getStatus() {

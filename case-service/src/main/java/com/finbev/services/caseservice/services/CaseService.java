@@ -1,13 +1,10 @@
 package com.finbev.services.caseservice.services;
 
 import com.finbev.services.caseservice.models.Case;
-import com.finbev.services.caseservice.models.HouseLoan;
 import com.finbev.services.caseservice.models.Product;
 import com.finbev.services.caseservice.repos.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -45,17 +42,17 @@ public class CaseService {
         }
     }
 
-    public String createHouseLoanApplication(int id){
+    public Case createHouseLoanApplication(int id){
         try{
             Case aCase = getCaseById(id);
             Case newCase = createApplicationFromPreapproval(aCase);
             updateStatusFinished(id);
             caseRepository.saveAndFlush(aCase);
-            caseRepository.saveAndFlush(newCase);
-            return "OK";
+            return caseRepository.saveAndFlush(newCase);
 
         } catch (Exception e) {
-            return e.getMessage();
+            System.out.println(e.getMessage());
+            return null;
         }
     }
 

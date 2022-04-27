@@ -8,7 +8,7 @@ insert into product (product_type, id, description, name, type)
 values (1, 2, 'Certificate that confirms that the customer has been guaranteed a loan', 'Preapproval letter', 'Preapproval letter');
 
 insert into product (product_type, id, description, name, type)
-values (2, 3, 'Unfinished application', '', 'House loan application');
+values (2, 3, 'Unfinished application', 'House loan application', 'House loan application');
 
 insert into product (product_type, id, description, name, type, interest_rate)
 values (2, 4, 'Our best interest rate for real estates with a green profile', 'Green house loan', 'Green', 1.80);
