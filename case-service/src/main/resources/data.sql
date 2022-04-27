@@ -17,7 +17,7 @@ insert into product (product_type, id, description, name, type, interest_rate)
 values (2, 5, 'Regular house loan', 'House loan', 'Normal', 2.20);
 
 insert into case_table (case_id, purchase_amount, loan_amount, equity, downpayment_period, income, debt, date, status, customer_id, product_id)
-values (1, 3500000, 3000000, 500000, 0, 600000, 200000, '2022-03-03', 'Finished', 1, 1);
+values (1, 3500000, 3000000, 500000, 0, 600000, 200000, '2022-03-01', 'Fullført', 1, 1);
 
 insert into case_table (case_id, purchase_amount, loan_amount, equity, downpayment_period, income, debt, date, status, customer_id, product_id)
-values (2, 2700000, 2300000, 400000, 0, 550000, 150000, '2022-03-01', 'Ready for approval', 1, 2);
+values (2, 2700000, 2300000, 400000, 0, 550000, 150000, '2022-03-03', 'Klar til å fortsette', 1, 2);

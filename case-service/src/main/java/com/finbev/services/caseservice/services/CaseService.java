@@ -38,7 +38,7 @@ public class CaseService {
     public String updateStatusFinished(int id) {
         try {
             Case aCase = getCaseById(id);
-            aCase.setStatus("Finished");
+            aCase.setStatus("Fullført");
             return "OK";
         }
         catch (Exception e){
@@ -64,7 +64,7 @@ public class CaseService {
         Case newCase = new Case();
         Product application = productService.findApplication();
         newCase.setProduct(application);
-        newCase.setStatus("Application in progress");
+        newCase.setStatus("Fortsett søknad");
         newCase.setPurchaseAmount(aCase.getPurchaseAmount());
         newCase.setLoanAmount(aCase.getLoanAmount());
         newCase.setDebt(aCase.getDebt());
@@ -79,7 +79,7 @@ public class CaseService {
         try {
             Product houseLoanType = productService.findLoanType(type);
             aCase.setProduct(houseLoanType);
-            aCase.setStatus("Finished");
+            aCase.setStatus("Fullført");
             caseRepository.saveAndFlush(aCase);
             return aCase;
         } catch (Exception e){
