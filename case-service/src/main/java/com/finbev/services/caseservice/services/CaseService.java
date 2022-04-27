@@ -6,6 +6,8 @@ import com.finbev.services.caseservice.repos.CaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -18,7 +20,9 @@ public class CaseService {
     ProductService productService;
 
     public List<Case> findAllCases(){
-        return caseRepository.findAll();
+        List<Case> caseList = caseRepository.findAll();
+        caseList.sort(Comparator.comparing(Case::getCaseId, Comparator.reverseOrder()));
+        return caseList;
     }
 
     public Case getCaseById(int id) throws Exception {
