@@ -18,8 +18,8 @@ public class HousingCooperative extends RealEstate{
     public HousingCooperative() {
     }
 
-    public HousingCooperative(int id, String address, String type, String energyClass, int unitNumber, String cooperativeName, double sharedDebt) {
-        super(id, address, type, energyClass);
+    public HousingCooperative(int id, String address, int postalCode, String type, String energyClass, int unitNumber, String cooperativeName, double sharedDebt) {
+        super(id, address, postalCode, type, energyClass);
         this.unitNumber = unitNumber;
         this.cooperativeName = cooperativeName;
         this.sharedDebt = sharedDebt;

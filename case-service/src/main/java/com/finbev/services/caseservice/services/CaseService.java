@@ -71,18 +71,15 @@ public class CaseService {
         return newCase;
     }
 
-    public String createHouseLoan(Case aCase, String type){
+    public Case createHouseLoan(Case aCase, String type){
         try {
             Product houseLoanType = productService.findLoanType(type);
-            if(houseLoanType == null){
-                return "Could not find loan type";
-            }
             aCase.setProduct(houseLoanType);
             aCase.setStatus("Finished");
             caseRepository.saveAndFlush(aCase);
-            return "OK";
+            return aCase;
         } catch (Exception e){
-            return e.getMessage();
+            return null;
         }
     }
 }

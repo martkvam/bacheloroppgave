@@ -6,6 +6,8 @@ import com.finbev.services.caseservice.services.CaseService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,10 +29,13 @@ public class CaseController {
 
     @PostMapping("/cases/updateApplication/{type}")
     @Operation(description = "finishes a house loan application")
-    public String finishHouseLoan(@RequestBody Case aCase, @PathVariable String type){
-        System.out.println(aCase);
-        System.out.println(type);
-        return caseService.createHouseLoan(aCase, type);
+    public ResponseEntity<Case> finishHouseLoan(@RequestBody Case aCase, @PathVariable String type){
+            Case finishedApplication = caseService.createHouseLoan(aCase, type);
+            if (finishedApplication != null){
+                return new ResponseEntity<>(finishedApplication, HttpStatus.CREATED);
+            } else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
     }
 
     @GetMapping("/cases/{id}")
