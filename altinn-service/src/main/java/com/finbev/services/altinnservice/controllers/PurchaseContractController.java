@@ -21,19 +21,19 @@ public class PurchaseContractController {
     @Autowired
     PurchaseContractService purchaseContractService;
 
-    //Returns all contracts
+    /*Returns all contracts
     @GetMapping("/contracts")
     @Operation(summary = "Find all contracts", description = "Returns all purchase contracts")
     public List<PurchaseContract> findAllContracts(){
         return purchaseContractService.findAllContracts();
-    }
+    } */
 
-    //Returns all contracts for given broker and social sec nr
+    /*Returns all contracts for given broker and social sec nr
     @GetMapping("/contracts/broker/{brokerId}/socialSecNumber/{socialSecNumber}")
     @Operation(summary = "Find all contracts for broker and social", description = "Returns all purchase contracts associated with a certain broker and social sec number")
     public List<PurchaseContract> findContractsByBrokerAndSocial(@PathVariable int brokerId, @PathVariable long socialSecNumber) throws Exception {
        return purchaseContractService.findByBrokerAndSocial(brokerId, socialSecNumber);
-    }
+    } */
 
     //Returns the newest contract for given broker and social sec
     @GetMapping("/contract/broker/{brokerId}/socialSecNumber/{socialSecNumber}")

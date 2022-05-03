@@ -11,7 +11,7 @@ public class RealEstate {
     @Column
     private String address;
     @Column
-    private int postalCode;
+    private String postalCode;
     @Column
     private String type;
     @Column
@@ -20,7 +20,7 @@ public class RealEstate {
     public RealEstate() {
     }
 
-    public RealEstate(int id, String address, int postalCode, String type, String energyClass) {
+    public RealEstate(int id, String address, String postalCode, String type, String energyClass) {
         this.id = id;
         this.address = address;
         this.postalCode = postalCode;
@@ -44,11 +44,11 @@ public class RealEstate {
         this.address = address;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 

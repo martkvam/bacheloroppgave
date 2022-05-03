@@ -19,7 +19,7 @@ public class Conduminium extends RealEstate{
     public Conduminium() {
     }
 
-    public Conduminium(int id, String address, int postalCode, String type, String energyClass, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
+    public Conduminium(int id, String address, String postalCode, String type, String energyClass, int cadastralNumber, int titleNumber, int sectionNumber, int leaseNumber) {
         super(id, address, postalCode, type, energyClass);
         this.cadastralNumber = cadastralNumber;
         this.titleNumber = titleNumber;

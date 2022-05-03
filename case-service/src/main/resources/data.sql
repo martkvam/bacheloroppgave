@@ -20,4 +20,8 @@ insert into case_table (case_id, purchase_amount, loan_amount, equity, downpayme
 values (1, 3500000, 3000000, 500000, 0, 600000, 200000, '2022-03-01', 'Fullført', 1, 1);
 
 insert into case_table (case_id, purchase_amount, loan_amount, equity, downpayment_period, income, debt, date, status, customer_id, product_id)
-values (2, 2700000, 2300000, 400000, 0, 550000, 150000, '2022-03-03', 'Klar til å fortsette', 1, 2);
+values (2, 10000000, 8500000, 3000000, 0, 2000000, 100000, '2022-03-02', 'Klar til å fortsette', 1, 2);
+
+insert into case_table (case_id, purchase_amount, loan_amount, equity, downpayment_period, income, debt, date, status, customer_id, product_id)
+values (3, 3500000, 2750000, 750000, 0, 550000, 150000, '2022-03-03', 'Klar til å fortsette', 1, 2);
+

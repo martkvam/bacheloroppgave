@@ -23,9 +23,10 @@ public class RealEstateController {
     @Autowired
     RealEstateService realEstateService;
 
+    /*
     @GetMapping("/realestates")
     @Operation(summary = "Returns all real estates", description = "Returns all realestates")
     public List<RealEstate> findAllRealEstate(){
         return realEstateService.findAllRealEstates();
-    }
+    } */
 }
