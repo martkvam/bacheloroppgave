@@ -1,7 +1,7 @@
 insert into real_estate(product_type, id, address, postal_code, type, energy_class, unit_number, cooperative_name, shared_debt)
 values (1, 1, 'Pilestredet 35', '0160', 'Borettslag', 'A', 0302, 'Tertitten borettslag', 300000),
 (1, 2, 'Bogstadveien 21', '0670', 'Borettslag', 'B', 1322, 'Bogstadveien borettslag', 100000),
-(1, 3, 'Blindernveien 8', '0115', 'Borettslag', 'C', 5302, 'Blindern borettslag', 75000);
+(1, 3, 'Blindernveien 8', '0115', 'Selveier', 'C', 5302, 'Blindern borettslag', 75000);
 
 insert into real_estate(product_type, id, address, postal_code, type, energy_class, cadastral_number, title_number, section_number, lease_number)
 values (2, 4, 'Heidmanns gate 23', '2317', 'Selveier', 'B', 17, 235, 2, 4),
